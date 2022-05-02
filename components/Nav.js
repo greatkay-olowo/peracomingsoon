@@ -48,7 +48,7 @@ function Nav() {
 											New Application
 										</a>
 									</Link>
-									<Link href='/proforma-invoice'>
+									{/* <Link href='/proforma-invoice'>
 										<a
 											className={
 												router.pathname ==
@@ -58,7 +58,7 @@ function Nav() {
 											}>
 											Generate Invoice
 										</a>
-									</Link>
+									</Link> */}
 									<Link href='/dsa'>
 										<a
 											className={
