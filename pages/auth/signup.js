@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import InputUI from '../../components/UI/InputUI';
+import InputUI from '../../components/UI/Input';
 
 export default function Signup() {
 	return (

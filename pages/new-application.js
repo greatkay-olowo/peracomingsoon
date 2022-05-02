@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
-import ButtonUI from '../components/UI/button';
+import ButtonUI from '../components/UI/Button';
 import InputUI from '../components/UI/Input';
 import Select from '../components/UI/Select';
 import AppContainer from '../components/Container';

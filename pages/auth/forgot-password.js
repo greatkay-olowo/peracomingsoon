@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import ButtonUI from '../../components/UI/Nutton';
+import ButtonUI from '../../components/UI/Button';
 import InputUI from '../../components/UI/Input';
 
 export default function ForgotPassword() {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AppContainer from '../components/Container';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import ButtonUI from '../components/UI/button';
+import ButtonUI from '../components/UI/Button';
 
 const sampleData = [
 	{
