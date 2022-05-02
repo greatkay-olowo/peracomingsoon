@@ -3,7 +3,6 @@ import AppContainer from '../components/Container';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import ButtonUI from '../components/UI/button';
-import { ImFilesEmpty } from 'react-icons/im';
 
 const sampleData = [
 	{
@@ -72,7 +71,6 @@ export default function Home() {
 
 						{applicationData.length === 0 ? (
 							<div className='py-5  text-center  text-secondary p-3 '>
-								<ImFilesEmpty className='text-4xl mx-auto' />
 								<span className='text-sm font-medium'>
 									No application yet
 								</span>
@@ -146,7 +144,7 @@ export default function Home() {
 											{applicationData.map(
 												(application, index) => (
 													<tr
-														key={application.id}
+														key={index}
 														className='bg-white border-b'>
 														<td className='px-6 py-4'>
 															{application.date}
