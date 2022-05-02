@@ -85,7 +85,7 @@ export default function NewApplication() {
 											className='mt-6 w-4 h-4 text-primary bg-gray-100 border-gray-300 focus:ring-primary focus:ring-2 dark:bg-gray-700 '
 										/>
 										<label
-											for='self-employed'
+											htmlFor='self-employed'
 											className='mt-6 ml-2 text-sm font-medium'>
 											Self Employed
 										</label>
@@ -106,7 +106,7 @@ export default function NewApplication() {
 										className='mt-6 w-4 h-4 text-primary bg-gray-100 border-gray-300 focus:ring-primary '
 									/>
 									<label
-										for='salary-earner'
+										htmlFor='salary-earner'
 										className='mt-6  ml-2 text-sm font-medium'>
 										Salary Earner
 									</label>

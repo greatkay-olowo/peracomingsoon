@@ -3,77 +3,77 @@ import React from 'react';
 export default function Footer() {
 	return (
 		<>
-			<footer class='bg-secondary'>
-				<div class='grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-3'>
+			<footer className='bg-secondary'>
+				<div className='grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-3'>
 					<div>
-						<h2 class='mb-6 text-sm font-semibold text-accent uppercase'>
+						<h2 className='mb-6 text-sm font-semibold text-accent uppercase'>
 							Company
 						</h2>
-						<ul class='text-accent'>
-							<li class='mb-4'>
-								<a href='#' class=' hover:underline'>
+						<ul className='text-accent'>
+							<li className='mb-4'>
+								<a href='#' className=' hover:underline'>
 									About
 								</a>
 							</li>
-							<li class='mb-4'>
-								<a href='#' class='hover:underline'>
+							<li className='mb-4'>
+								<a href='#' className='hover:underline'>
 									Careers
 								</a>
 							</li>
 						</ul>
 					</div>
 					<div>
-						<h2 class='mb-6 text-sm font-semibold text-accent uppercase'>
+						<h2 className='mb-6 text-sm font-semibold text-accent uppercase'>
 							Help center
 						</h2>
-						<ul class='text-accent'>
-							<li class='mb-4'>
-								<a href='#' class='hover:underline'>
+						<ul className='text-accent'>
+							<li className='mb-4'>
+								<a href='#' className='hover:underline'>
 									Twitter
 								</a>
 							</li>
-							<li class='mb-4'>
-								<a href='#' class='hover:underline'>
+							<li className='mb-4'>
+								<a href='#' className='hover:underline'>
 									Facebook
 								</a>
 							</li>
-							<a href='#' class='hover:underline'></a>
-							<li class='mb-4'>
-								<a href='#' class='hover:underline'></a>
-								<a href='#' class='hover:underline'>
+							<a href='#' className='hover:underline'></a>
+							<li className='mb-4'>
+								<a href='#' className='hover:underline'></a>
+								<a href='#' className='hover:underline'>
 									Contact Us
 								</a>
 							</li>
 						</ul>
 					</div>
 					<div>
-						<h2 class='mb-6 text-sm font-semibold text-accent uppercase'>
+						<h2 className='mb-6 text-sm font-semibold text-accent uppercase'>
 							Legal
 						</h2>
-						<ul class='text-accent'>
-							<li class='mb-4'>
-								<a href='#' class='hover:underline'>
+						<ul className='text-accent'>
+							<li className='mb-4'>
+								<a href='#' className='hover:underline'>
 									Privacy Policy
 								</a>
 							</li>
 
-							<li class='mb-4'>
-								<a href='#' class='hover:underline'>
+							<li className='mb-4'>
+								<a href='#' className='hover:underline'>
 									Terms &amp; Conditions
 								</a>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<div class='py-6 px-4 md:flex md:items-center md:justify-between'>
-					<span class='text-sm text-accent sm:text-center'>
+				<div className='py-6 px-4 md:flex md:items-center md:justify-between'>
+					<span className='text-sm text-accent sm:text-center'>
 						© 2022 <a href='https://pera.ng'>Pera</a>. All Rights
 						Reserved.
 					</span>
-					<div class='flex mt-4 space-x-6 sm:justify-center md:mt-0'>
-						<a href='#' class='text-accent hover:text-white'>
+					<div className='flex mt-4 space-x-6 sm:justify-center md:mt-0'>
+						<a href='#' className='text-accent hover:text-white'>
 							<svg
-								class='w-5 h-5'
+								className='w-5 h-5'
 								fill='currentColor'
 								viewBox='0 0 24 24'
 								aria-hidden='true'>
@@ -83,9 +83,9 @@ export default function Footer() {
 									clipRule='evenodd'></path>
 							</svg>
 						</a>
-						<a href='#' class='text-accent hover:text-white'>
+						<a href='#' className='text-accent hover:text-white'>
 							<svg
-								class='w-5 h-5'
+								className='w-5 h-5'
 								fill='currentColor'
 								viewBox='0 0 24 24'
 								aria-hidden='true'>
@@ -95,9 +95,9 @@ export default function Footer() {
 									clipRule='evenodd'></path>
 							</svg>
 						</a>
-						<a href='#' class='text-accent hover:text-white'>
+						<a href='#' className='text-accent hover:text-white'>
 							<svg
-								class='w-5 h-5'
+								className='w-5 h-5'
 								fill='currentColor'
 								viewBox='0 0 24 24'
 								aria-hidden='true'>
