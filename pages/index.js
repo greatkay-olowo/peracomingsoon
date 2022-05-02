@@ -72,7 +72,7 @@ export default function Home() {
 						{applicationData.length === 0 ? (
 							<div className='py-5  text-center  text-secondary p-3 '>
 								<span className='text-sm font-medium'>
-									No application yet
+									No application yet.
 								</span>
 							</div>
 						) : (
