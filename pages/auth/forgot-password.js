@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '../../components/UI/button';
-import Input from '../../components/UI/input';
+import ButtonUI from '../../components/UI/Nutton';
+import InputUI from '../../components/UI/Input';
 
 export default function ForgotPassword() {
 	return (
@@ -27,24 +27,24 @@ export default function ForgotPassword() {
 						profile containing an OTP to reset your password. The
 						password expires in 5 minutes.
 					</div>
-					<Button primary text='Request OTP' />
+					<ButtonUI primary text='Request OTP' />
 
 					<form action=''>
 						<div className='mt-4'>
-							<Input
+							<InputUI
 								label='OTP'
 								type='text'
 								placeholder='OTP'
 								error={''}
 							/>
 
-							<Input
+							<InputUI
 								label='New Password'
 								type='password'
 								placeholder='************'
 								error={''}
 							/>
-							<Input
+							<InputUI
 								label='Confirm Password'
 								type='password'
 								placeholder='************'

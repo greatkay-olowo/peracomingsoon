@@ -1,8 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '../../components/UI/button';
-import Input from '../../components/UI/input';
+import InputUI from '../../components/UI/InputUI';
 
 export default function Signup() {
 	return (
@@ -24,13 +23,13 @@ export default function Signup() {
 					</h3>
 					<form action=''>
 						<div className='mt-8'>
-							<Input
+							<InputUI
 								label='Email'
 								type='email'
 								placeholder='Email'
 								error={''}
 							/>
-							<Input
+							<InputUI
 								label='Password'
 								type='password'
 								placeholder='************'
