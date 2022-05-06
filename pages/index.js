@@ -1,9 +1,6 @@
 import React from 'react';
 import AppContainer from '../components/Container';
 import Image from 'next/image';
-import ButtonUI from '../components/UI/Button';
-import { Disclosure } from '@headlessui/react';
-import { CgChevronRight } from 'react-icons/cg';
 import FAQ from '../components/UI/FAQ';
 
 const CTA = () => {
