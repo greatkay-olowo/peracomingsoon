@@ -4,7 +4,7 @@ export default function Footer() {
 	return (
 		<>
 			<footer className='bg-secondary'>
-				<div className='grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-3'>
+				{/* <div className='grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-3'>
 					<div>
 						<h2 className='mb-6 text-sm font-semibold text-accent uppercase'>
 							Company
@@ -64,7 +64,7 @@ export default function Footer() {
 							</li>
 						</ul>
 					</div>
-				</div>
+				</div> */}
 				<div className='py-6 px-4 md:flex md:items-center md:justify-between'>
 					<span className='text-sm text-accent sm:text-center'>
 						© 2022 <a href='https://pera.ng'>Pera</a>. All Rights

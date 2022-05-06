@@ -27,14 +27,14 @@ function Nav() {
 							</Link>
 							<div className='hidden md:block'>
 								<div className='ml-10 flex items-baseline space-x-4'>
-									<Link href='/'>
+									<Link href='/loan'>
 										<a
 											className={
-												router.pathname == '/'
+												router.pathname == '/loan'
 													? activeLink
 													: nonActiveLink
 											}>
-											Loans
+											Loan
 										</a>
 									</Link>
 									<Link href='/new-application'>

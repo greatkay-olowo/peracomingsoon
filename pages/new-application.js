@@ -7,7 +7,6 @@ import InputUI from '../components/UI/Input';
 import Select from '../components/UI/Select';
 import AppContainer from '../components/Container';
 import NaijaStates from 'naija-state-local-government';
-import ModalContainer from '../components/ModalContainer';
 import FileInput from '../components/UI/FineInput';
 
 export default function NewApplication() {
@@ -16,7 +15,6 @@ export default function NewApplication() {
 	const [employmentType, setEmploymentType] = useState('self-employed');
 	return (
 		<AppContainer>
-			<ModalContainer />
 			<div className='rounded m-auto my-2 max-w-3xl	'>
 				<div className='mt-4'>
 					<h3 className='text-2xl font-bold text-center'>
