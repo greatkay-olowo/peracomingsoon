@@ -1,7 +1,7 @@
 import React from 'react';
 import AppContainer from '../components/Container';
 import Image from 'next/image';
-import FAQ from '../components/UI/FAQ';
+import Faq from '../components/UI/FAQ';
 
 const CTA = () => {
 	return (
@@ -25,6 +25,7 @@ const Subheading = ({ children }) => {
 		</>
 	);
 };
+
 export default function Home() {
 	return (
 		<AppContainer>
