@@ -211,7 +211,7 @@ export default function Home() {
 			{/*End of Our Partners */}
 			{/* FAQ */}
 			<Subheading>Frequently Asked questions</Subheading>
-			<FAQ />
+			<Faq />
 			{/*End of FAQ */}
 			{/* DSA */}
 		</AppContainer>
