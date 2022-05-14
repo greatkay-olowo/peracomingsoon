@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { CgProfile } from 'react-icons/cg';
+import ButtonUI from './UI/Button';
 
 const activeLink = `px-3 py-2 rounded-md text-sm text-primary font-medium underline underline-offset-8 decoration-primary decoration-2`;
 const nonActiveLink = `px-3 py-2 rounded-md text-sm hover:text-primary font-medium hover:underline hover:underline-offset-8 hover:decoration-primary hover:decoration-2`;
@@ -73,25 +74,47 @@ function Nav() {
 							</div>
 						</div>
 						<div className='flex items-center justify-between'>
-							<div
-								className='flex text-primary cursor-pointer hover:text-secondary'
-								onClick={() => setShowIcon(!showIcon)}>
-								<CgProfile className='text-2xl mx-2 text-primary cursor-pointer ' />{' '}
-								<span className='mr-5'>Settings</span>
-								{showIcon && (
-									<div className='shadow-lg absolute mt-10 border border-primary text-primary bg-accent'>
-										<button
-											className='hover:bg-primary hover:text-accent w-full  p-1 border-b border-primary '
-											onClick={() => {
-												router.push('/profile');
-											}}>
-											Profile
-										</button>
-										<button className='hover:bg-primary hover:text-accent w-full  p-1'>
-											Logout
-										</button>
-									</div>
-								)}
+							<Link href='/auth/login'>
+								<a
+									className={`${
+										router.pathname == '/login'
+											? activeLink
+											: nonActiveLink
+									} hidden sm:inline-block`}>
+									Login
+								</a>
+							</Link>
+							<Link href='/auth/signup'>
+								<a
+									className={`${
+										router.pathname == '/signup'
+											? activeLink
+											: nonActiveLink
+									} hidden sm:inline-block`}>
+									Sign Up
+								</a>
+							</Link>
+							<div className=' hidden sm:inline-block'>
+								<div
+									className='flex text-primary cursor-pointer hover:text-secondary '
+									onClick={() => setShowIcon(!showIcon)}>
+									<CgProfile className='text-2xl mx-2 text-primary cursor-pointer ' />{' '}
+									<span className='mr-5'>Settings</span>
+									{showIcon && (
+										<div className='shadow-lg absolute mt-10 border border-primary text-primary bg-accent'>
+											<button
+												className='hover:bg-primary hover:text-accent w-full  p-1 border-b border-primary '
+												onClick={() => {
+													router.push('/profile');
+												}}>
+												Profile
+											</button>
+											<button className='hover:bg-primary hover:text-accent w-full  p-1'>
+												Logout
+											</button>
+										</div>
+									)}
+								</div>
 							</div>
 							<div className='-mr-2 flex md:hidden'>
 								<button
@@ -149,9 +172,71 @@ function Nav() {
 						<div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
 							<a
 								href='#'
-								className='hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium'>
-								Dashboard
+								className={
+									router.pathname == '/loan'
+										? activeLink
+										: nonActiveLink
+								}>
+								Loan
 							</a>
+						</div>
+						<div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
+							<a
+								href='#'
+								className={
+									router.pathname == '/new-application'
+										? activeLink
+										: nonActiveLink
+								}>
+								New Application
+							</a>
+						</div>
+						<div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
+							<a
+								href='#'
+								className={
+									router.pathname == '/dsa'
+										? activeLink
+										: nonActiveLink
+								}>
+								DSA
+							</a>
+						</div>
+						<div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
+							<a
+								href='#'
+								className={
+									router.pathname == '/profile'
+										? activeLink
+										: nonActiveLink
+								}>
+								Profile
+							</a>
+						</div>
+						<div className='mx-2'>
+							<button
+								className='hover:bg-primary hover:text-white bg-accent px-4 py-2 my-1 hover:shadow-lg w-full'
+								onClick={() => {
+									router.push('/signup');
+								}}>
+								Sign Up
+							</button>
+						</div>
+						<div className=' mx-2'>
+							<button
+								className='hover:bg-primary hover:text-white bg-accent px-4 py-2 my-1 hover:shadow-lg w-full'
+								onClick={() => {
+									router.push('/login');
+								}}>
+								Login
+							</button>
+						</div>
+						<div className=' mx-2'>
+							<button
+								className='hover:bg-primary hover:text-white bg-accent px-4 py-2 my-1 hover:shadow-lg w-full'
+								onClick={() => {}}>
+								Logout
+							</button>
 						</div>
 					</div>
 				)}

@@ -2,6 +2,8 @@ import React from 'react';
 import AppContainer from '../components/Container';
 import Image from 'next/image';
 import Faq from '../components/UI/FAQ';
+import InputUI from '../components/UI/Input';
+import ButtonUI from '../components/UI/Button';
 
 const CTA = () => {
 	return (
@@ -51,6 +53,69 @@ export default function Home() {
 				</div>
 			</div>
 			{/*End of Hero */}
+			{/* start of calculator */}
+			<>
+				{' '}
+				<Subheading>Loan Calculator</Subheading>
+				<div className='flex flex-col sm:flex-row gap-5 w-full sm:max-w-screen-md shadow-lg rounded-lg mx-auto p-5'>
+					<div className='w-full sm-w-1/2 border-r px-3'>
+						<h3 className='text-center text-lg font-bold mb-3 text-secondary'>
+							Property Loan Calculator
+						</h3>
+						<form>
+							<InputUI
+								label='Property Amount'
+								placeholder='Enter the amount of the property you want to buy'
+								type='number'
+							/>
+							<InputUI
+								label='Down Payment'
+								placeholder='How much do you want to pay down in %'
+								type='number'
+							/>
+							<small className='text-xs text-gray-500'>
+								Minimum of 30% required
+							</small>
+							<InputUI
+								label='Tenure'
+								placeholder='How many years will you use to pay this money back?'
+								type='number'
+								min='1'
+								max='30'
+							/>
+							<small className='text-xs text-gray-500'>
+								Minimum of 1 year and maximum of 30 years
+							</small>
+						</form>
+					</div>
+					<div className='w-full sm-w-1/2  px-3'>
+						<h3 className='text-center text-lg font-bold mb-3 text-secondary'>
+							Estimated Loan Terms and Conditions
+						</h3>
+						<>
+							<div className='w-full mt-10'>
+								<div className='flex justify-between mb-5'>
+									<p className='font-bold'>Loan Amount: </p>
+									<p className='font-bold'>N200,000</p>
+								</div>
+								<div className='flex justify-between mb-5'>
+									<p className='font-bold'>
+										Equity Contribution:{' '}
+									</p>
+									<p className='font-bold'>N200,000</p>
+								</div>
+								<div className='flex justify-between mb-5'>
+									<p className='font-bold'>
+										Monthly Repayment:{' '}
+									</p>
+									<p className='font-bold'>N200,000</p>
+								</div>
+							</div>
+						</>
+					</div>
+				</div>
+			</>
+			{/* end of calculator */}
 			{/* How it works */}
 			<Subheading>How it works</Subheading>
 			<div className='mx-auto flex justify-around p-6 '>
@@ -166,7 +231,7 @@ export default function Home() {
 			</div>
 			{/* End of How it works */}
 			{/* Our Partners */} <Subheading>Some of Our Partners</Subheading>
-			<div className='bg-white rounded-lg shadow-lg'>
+			<div className='bg-white rounded-lg shadow-lg w-full sm:max-w-screen-md mx-auto'>
 				<div className='flex flex-wrap justify-center gap-10 py-20'>
 					<div className='w-1/5 sm:w-1/10'>
 						<img src='/partner.svg' alt='partner-1' />

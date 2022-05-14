@@ -33,7 +33,7 @@ export default function Faq() {
 							<Disclosure.Button className='flex w-full justify-between rounded-lg px-4 py-2 text-left text-lg text-secondary hover:bg-primary hover:text-white focus:outline-none focus-visible:ring focus-visible:ring-primary focus-visible:ring-opacity-75'>
 								<span>
 									What type of property can be bought through
-									autochek finance?
+									Pera finance?
 								</span>
 								<CgChevronUp
 									className={`${
@@ -44,10 +44,9 @@ export default function Faq() {
 							<Disclosure.Panel className='px-4 pt-4 pb-2 text-sm text-gray-500'>
 								We have an expansive selection of car available
 								for finance. Some of the makes available are –
-								Toyota, Mercedes, Lexus, Hyundai, Kia, Nissan,
-								Volkswagen. If you don’t find the car of your
-								choice, please conact us and we would source one
-								meeting your needs
+								Land, Flats, Buildings. If you don’t find the
+								property of your choice, please conact us and we
+								would source one meeting your needs
 							</Disclosure.Panel>
 						</>
 					)}
