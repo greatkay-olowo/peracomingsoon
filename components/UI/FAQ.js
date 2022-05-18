@@ -44,7 +44,7 @@ export default function Faq() {
 							<Disclosure.Panel className='px-4 pt-4 pb-2 text-sm text-gray-500'>
 								We have an expansive selection of car available
 								for finance. Some of the makes available are –
-								Land, Flats, Buildings. If you don’t find the
+								Land, Flats, Buildings . If you don’t find the
 								property of your choice, please conact us and we
 								would source one meeting your needs
 							</Disclosure.Panel>

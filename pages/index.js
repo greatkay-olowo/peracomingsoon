@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AppContainer from '../components/Container';
 import Image from 'next/image';
 import Faq from '../components/UI/FAQ';
 import InputUI from '../components/UI/Input';
 import ButtonUI from '../components/UI/Button';
+import HeroPic from '../public/hero.jpg';
+import {
+	loanAmount,
+	equity as _equity,
+	emi,
+	propertyAmount,
+} from '../services/loanCalc';
 
 const CTA = () => {
 	return (
@@ -29,6 +36,10 @@ const Subheading = ({ children }) => {
 };
 
 export default function Home() {
+	const [amount, setAmount] = useState();
+	const [tenure, setTenure] = useState();
+	const [equity, setEquity] = useState();
+
 	return (
 		<AppContainer>
 			{/* Hero */}
@@ -45,7 +56,8 @@ export default function Home() {
 				</div>
 				<div className='w-full '>
 					<Image
-						src={'/hero.jpg'}
+						src={HeroPic}
+						priority
 						alt='hero'
 						width={1200}
 						height={800}
@@ -67,21 +79,27 @@ export default function Home() {
 								label='Property Amount'
 								placeholder='Enter the amount of the property you want to buy'
 								type='number'
+								value={amount}
+								onChange={(e) => setAmount(e.target.value)}
 							/>
 							<InputUI
-								label='Down Payment'
+								label='Down Payment (%)'
 								placeholder='How much do you want to pay down in %'
 								type='number'
+								value={equity}
+								onChange={(e) => setEquity(e.target.value)}
 							/>
 							<small className='text-xs text-gray-500'>
 								Minimum of 30% required
 							</small>
 							<InputUI
-								label='Tenure'
+								label='Tenure (Years)'
 								placeholder='How many years will you use to pay this money back?'
 								type='number'
 								min='1'
 								max='30'
+								value={tenure}
+								onChange={(e) => setTenure(e.target.value)}
 							/>
 							<small className='text-xs text-gray-500'>
 								Minimum of 1 year and maximum of 30 years
@@ -95,20 +113,48 @@ export default function Home() {
 						<>
 							<div className='w-full mt-10'>
 								<div className='flex justify-between mb-5'>
+									<p className='font-bold'>
+										Property Amount:{' '}
+									</p>
+									<p className='font-bold'>
+										{amount !== undefined
+											? parseInt(amount).toLocaleString(
+													'en-US',
+													{
+														style: 'currency',
+														currency: 'NGN',
+													}
+											  )
+											: 'NGN 0'}
+									</p>
+								</div>
+								<div className='flex justify-between mb-5'>
 									<p className='font-bold'>Loan Amount: </p>
-									<p className='font-bold'>N200,000</p>
+									<p className='font-bold'>
+										{loanAmount(amount, equity) === 'NGNNaN'
+											? 'NGN 0'
+											: loanAmount(amount, equity)}
+									</p>
 								</div>
 								<div className='flex justify-between mb-5'>
 									<p className='font-bold'>
 										Equity Contribution:{' '}
 									</p>
-									<p className='font-bold'>N200,000</p>
+									<p className='font-bold'>
+										{loanAmount(amount, equity) === 'NGNNaN'
+											? 'NGN 0'
+											: _equity(amount, equity)}
+									</p>
 								</div>
 								<div className='flex justify-between mb-5'>
 									<p className='font-bold'>
 										Monthly Repayment:{' '}
 									</p>
-									<p className='font-bold'>N200,000</p>
+									<p className='font-bold'>
+										{emi(amount, tenure, 0.15) == 'NGNNaN'
+											? 'NGN 0'
+											: emi(amount, tenure, 0.15)}
+									</p>
 								</div>
 							</div>
 						</>
