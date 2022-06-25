@@ -8,7 +8,7 @@ export default function Faq() {
 				<Disclosure>
 					{({ open }) => (
 						<>
-							<Disclosure.Button className='flex w-full justify-between rounded-lg px-4 py-2 text-left  text-secondary hover:bg-primary hover:text-white focus:outline-none focus-visible:ring focus-visible:ring-primary focus-visible:ring-opacity-75 text-2xl  font-semibold pb-5'>
+							<Disclosure.Button className='flex w-full justify-between rounded-lg px-4 py-2 text-left  text-secondary hover:bg-primary hover:text-white focus:outline-none focus-visible:ring focus-visible:ring-primary focus-visible:ring-opacity-75 text-lg font-semibold pb-5'>
 								<span>How does the Pera financing work?</span>
 								<CgChevronUp
 									className={`${

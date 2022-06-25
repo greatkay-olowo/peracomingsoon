@@ -51,13 +51,13 @@ export default function Home() {
 			<div>
 				<div className='bg-hero bg-cover object-cover bg-center h-screen w-full text-center p-5'>
 					<div className='sm:pt-35 pt-20 sm:w-2/3 mx-auto w-full '>
-						<h1 className='sm:text-7xl text-2xl  font-extrabold sm:mb-10 mb-3 text-white drop-shadow-lg'>
+						<h1 className='sm:text-4xl text-3xl  font-extrabold sm:mb-10 mb-4 text-white drop-shadow-lg'>
 							Buy that property now, <br /> pay monthly.
 						</h1>
-						<p className='text-md font-bold text-white drop-shadow-lg'>
+						<p className='text-sm font-bold text-white drop-shadow-lg'>
 							This mortgage could save you millions.
 						</p>
-						<div className='sm:flex justify-between py-10 sm:w-3/4 w-full mx-auto sm:mb-30'>
+						<div className='sm:flex justify-between py-5 my-5 sm:w-3/4 w-full mx-auto sm:mb-30'>
 							<div className='w-auto mb-2'>
 								<div className='flex'>
 									<div
@@ -67,7 +67,7 @@ export default function Home() {
 											<CgCheck className=' text-primary text-4xl' />
 										</p>
 									</div>
-									<p className='text-white flex sm:text-lg   ml-5 justify-center items-center'>
+									<p className='text-white ml-1 justify-left items-center'>
 										24/7 support
 									</p>
 								</div>
@@ -81,12 +81,12 @@ export default function Home() {
 											<CgCheck className=' text-primary text-4xl' />
 										</p>
 									</div>
-									<p className='text-white flex sm:text-lg   ml-5 justify-center items-center'>
+									<p className='text-white ml-1 justify-center items-center'>
 										Simple online experience
 									</p>
 								</div>
 							</div>
-							<div className='w-auto mb-2'>
+							<div className='w-auto'>
 								<div className='flex'>
 									<div
 										className='w-[30px] h-[30px] bg-white rounded-full flex 
@@ -95,7 +95,7 @@ export default function Home() {
 											<CgCheck className=' text-primary text-4xl' />
 										</p>
 									</div>
-									<p className='text-white flex sm:text-lg   ml-5 justify-center items-center'>
+									<p className='text-white ml-1 justify-center items-center'>
 										Fast Processing Time
 									</p>
 								</div>
@@ -112,7 +112,7 @@ export default function Home() {
 				<>
 					<div className='sm:flex'>
 						<div className='sm:w-1/2 mb-5'>
-							<div className='text-4xl sm:text-6xl font-semibold sm:font-bold'>
+							<div className='text-4xl sm:text-4xl font-semibold sm:font-bold'>
 								What you need, <br /> when you need it
 							</div>
 							<button className='bg-primary sm:text-lg py-5 font-medium text-center text-white my-10 rounded-lg w-60 hover:shadow-lg uppercase hover:drop-shadow-xl'>
@@ -152,13 +152,15 @@ export default function Home() {
 				</>
 				<>
 					<div className=' bg-primary flex my-60 rounded-2xl sm:p-20 p-5 overflow-hidden'>
-						<div className=' z-40'>
-							<p className='text-white drop-shadow	text-4xl sm:text-6xl font-semibold sm:font-bold'>
+						<div className='z-40 w-full'>
+							<div className='text-white drop-shadow text-2xl sm:text-4xl font-semibold sm:font-bold w-full'>
 								Find the right property for your budget
-							</p>
-							<button className='bg-white sm:text-lg py-5 font-semibold text-center text-primary my-10 rounded-lg w-96 hover:shadow-lg uppercase hover:drop-shadow-xl'>
-								Use our calculators
-							</button>
+							</div>
+							<div className='w-full'>
+								<button className='bg-white sm:text-lg text-sm py-5 font-semibold text-center text-primary my-10 rounded-lg sm:w-96 w-full hover:shadow-lg uppercase hover:drop-shadow-xl'>
+									Use our calculators
+								</button>{' '}
+							</div>
 						</div>
 						<div className='w-1/2 relative'>
 							<div className='blur-sm	'>
@@ -169,7 +171,7 @@ export default function Home() {
 					</div>
 				</>
 				{/* FAQ */}
-				<p className='text-secondary text-center text-5xl font-semibold sm:font-bold mb-10'>
+				<p className='text-4xl sm:text-4xl font-semibold sm:font-bold mb-10 text-center'>
 					Get help
 				</p>
 				<Faq />
