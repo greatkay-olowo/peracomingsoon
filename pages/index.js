@@ -51,7 +51,7 @@ export default function Home() {
 			<div>
 				<div className='bg-hero bg-cover object-cover bg-center h-screen w-full text-center p-5'>
 					<div className='sm:pt-35 pt-20 sm:w-2/3 mx-auto w-full '>
-						<h1 className='sm:text-4xl text-3xl  font-extrabold sm:mb-10 mb-4 text-white drop-shadow-lg'>
+						<h1 className='sm:text-6xl text-3xl  font-extrabold sm:mb-10 mb-4 text-white drop-shadow-lg'>
 							Buy that property now, <br /> pay monthly.
 						</h1>
 						<p className='text-sm font-bold text-white drop-shadow-lg'>
