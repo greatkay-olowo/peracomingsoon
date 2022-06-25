@@ -8,7 +8,7 @@ module.exports = {
 		colors: {
 			primary: '#4F46E5',
 			secondary: '#111827',
-			accent: '#EDECFC',
+			accent: '#E5C2FF',
 			white: '#FFFFFF',
 			red: '#FF0000',
 			green: '#66AA46',
@@ -20,7 +20,11 @@ module.exports = {
 		transition: {
 			transition: 'all 0.2s ease-in-out',
 		},
-		extend: {},
+		extend: {
+			backgroundImage: {
+				hero: "url('/hero.jpg')",
+			},
+		},
 	},
 	plugins: [require('flowbite/plugin')],
 };

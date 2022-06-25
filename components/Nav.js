@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import { CgProfile } from 'react-icons/cg';
 import ButtonUI from './UI/Button';
 
-const activeLink = `px-3 py-2 rounded-md text-sm text-primary font-medium underline underline-offset-8 decoration-primary decoration-2`;
-const nonActiveLink = `px-3 py-2 rounded-md text-sm hover:text-primary font-medium hover:underline hover:underline-offset-8 hover:decoration-primary hover:decoration-2`;
+const activeLink = `px-3 py-2 font-bold font-bold text-primary`;
+const nonActiveLink = `px-3 py-2 font-bold hover:text-primary`;
 function Nav() {
 	const router = useRouter();
 
@@ -14,7 +14,7 @@ function Nav() {
 	return (
 		<>
 			<nav className='shadow-md sticky top-0 bg-white z-50'>
-				<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+				<div className='mx-auto px-10 sm:px-20 py-5'>
 					<div className='flex items-center justify-between h-16'>
 						<div className='flex items-center'>
 							<Link
@@ -26,7 +26,7 @@ function Nav() {
 									alt='Pera Logo'
 								/>
 							</Link>
-							<div className='hidden md:block'>
+							<div className='hidden md:block '>
 								<div className='ml-10 flex items-baseline space-x-4'>
 									<Link href='/loan'>
 										<a
@@ -35,7 +35,7 @@ function Nav() {
 													? activeLink
 													: nonActiveLink
 											}>
-											Loan
+											Home
 										</a>
 									</Link>
 									<Link href='/new-application'>
@@ -59,7 +59,7 @@ function Nav() {
 											}>
 											Generate Invoice
 										</a>
-									</Link> */}
+									</Link> 
 									<Link href='/dsa'>
 										<a
 											className={
@@ -69,7 +69,7 @@ function Nav() {
 											}>
 											DSA
 										</a>
-									</Link>
+									</Link>*/}
 								</div>
 							</div>
 						</div>
@@ -101,15 +101,15 @@ function Nav() {
 									<CgProfile className='text-2xl mx-2 text-primary cursor-pointer ' />{' '}
 									<span className='mr-5'>Settings</span>
 									{showIcon && (
-										<div className='shadow-lg absolute mt-10 border border-primary text-primary bg-accent'>
+										<div className='shadow-lg absolute mt-10 border border-primary text-primary bg-white'>
 											<button
-												className='hover:bg-primary hover:text-accent w-full  p-1 border-b border-primary '
+												className='hover:bg-primary hover:text-white w-full  p-1 border-b border-primary '
 												onClick={() => {
 													router.push('/profile');
 												}}>
 												Profile
 											</button>
-											<button className='hover:bg-primary hover:text-accent w-full  p-1'>
+											<button className='hover:bg-primary hover:text-white w-full  p-1'>
 												Logout
 											</button>
 										</div>
@@ -122,7 +122,7 @@ function Nav() {
 										setIsOpen((isOpen) => !isOpen)
 									}
 									type='button'
-									className='bg-accent inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-accent hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-accent focus:ring-none'
+									className='bg-white inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-none'
 									aria-controls='mobile-menu'
 									aria-expanded='false'>
 									<span className='sr-only'>
@@ -215,7 +215,7 @@ function Nav() {
 						</div>
 						<div className='mx-2'>
 							<button
-								className='hover:bg-primary hover:text-white bg-accent px-4 py-2 my-1 hover:shadow-lg w-full'
+								className='hover:bg-primary hover:text-white bg-white px-4 py-2 my-1 hover:shadow-lg w-full'
 								onClick={() => {
 									router.push('/signup');
 								}}>
@@ -224,7 +224,7 @@ function Nav() {
 						</div>
 						<div className=' mx-2'>
 							<button
-								className='hover:bg-primary hover:text-white bg-accent px-4 py-2 my-1 hover:shadow-lg w-full'
+								className='hover:bg-primary hover:text-white bg-white px-4 py-2 my-1 hover:shadow-lg w-full'
 								onClick={() => {
 									router.push('/login');
 								}}>
@@ -233,7 +233,7 @@ function Nav() {
 						</div>
 						<div className=' mx-2'>
 							<button
-								className='hover:bg-primary hover:text-white bg-accent px-4 py-2 my-1 hover:shadow-lg w-full'
+								className='hover:bg-primary hover:text-white bg-white px-4 py-2 my-1 hover:shadow-lg w-full'
 								onClick={() => {}}>
 								Logout
 							</button>
