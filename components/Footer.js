@@ -3,13 +3,13 @@ import React from 'react';
 export default function Footer() {
 	return (
 		<>
-			<footer className='bg-secondary'>
+			<footer className='bg-primary'>
 				{/* <div className='grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-3'>
 					<div>
-						<h2 className='mb-6 text-sm font-semibold text-accent uppercase'>
+						<h2 className='mb-6 text-sm font-semibold text-white uppercase'>
 							Company
 						</h2>
-						<ul className='text-accent'>
+						<ul className='text-white'>
 							<li className='mb-4'>
 								<a href='#' className=' hover:underline'>
 									About
@@ -23,10 +23,10 @@ export default function Footer() {
 						</ul>
 					</div>
 					<div>
-						<h2 className='mb-6 text-sm font-semibold text-accent uppercase'>
+						<h2 className='mb-6 text-sm font-semibold text-white uppercase'>
 							Help center
 						</h2>
-						<ul className='text-accent'>
+						<ul className='text-white'>
 							<li className='mb-4'>
 								<a href='#' className='hover:underline'>
 									Twitter
@@ -47,10 +47,10 @@ export default function Footer() {
 						</ul>
 					</div>
 					<div>
-						<h2 className='mb-6 text-sm font-semibold text-accent uppercase'>
+						<h2 className='mb-6 text-sm font-semibold text-white uppercase'>
 							Legal
 						</h2>
-						<ul className='text-accent'>
+						<ul className='text-white'>
 							<li className='mb-4'>
 								<a href='#' className='hover:underline'>
 									Privacy Policy
@@ -66,12 +66,12 @@ export default function Footer() {
 					</div>
 				</div> */}
 				<div className='py-6 px-4 md:flex md:items-center md:justify-between'>
-					<span className='text-sm text-accent sm:text-center'>
+					<span className='text-sm text-white sm:text-center'>
 						© 2022 <a href='https://pera.ng'>Pera</a>. All Rights
 						Reserved.
 					</span>
 					<div className='flex mt-4 space-x-6 sm:justify-center md:mt-0'>
-						<a href='#' className='text-accent hover:text-white'>
+						<a href='#' className='text-white hover:text-white'>
 							<svg
 								className='w-5 h-5'
 								fill='currentColor'
@@ -83,7 +83,7 @@ export default function Footer() {
 									clipRule='evenodd'></path>
 							</svg>
 						</a>
-						<a href='#' className='text-accent hover:text-white'>
+						<a href='#' className='text-white hover:text-white'>
 							<svg
 								className='w-5 h-5'
 								fill='currentColor'
@@ -95,7 +95,7 @@ export default function Footer() {
 									clipRule='evenodd'></path>
 							</svg>
 						</a>
-						<a href='#' className='text-accent hover:text-white'>
+						<a href='#' className='text-white hover:text-white'>
 							<svg
 								className='w-5 h-5'
 								fill='currentColor'

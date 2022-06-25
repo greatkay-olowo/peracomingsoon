@@ -14,7 +14,7 @@ function Nav() {
 	return (
 		<>
 			<nav className='shadow-md sticky top-0 bg-white z-50'>
-				<div className='mx-auto px-10 sm:px-20 py-5'>
+				<div className='mx-auto px-10 sm:px-20 sm:py-5'>
 					<div className='flex items-center justify-between h-16'>
 						<div className='flex items-center'>
 							<Link

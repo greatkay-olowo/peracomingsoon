@@ -8,7 +8,7 @@ export default function Faq() {
 				<Disclosure>
 					{({ open }) => (
 						<>
-							<Disclosure.Button className='flex w-full justify-between rounded-lg px-4 py-2 text-left text-lg text-secondary hover:bg-primary hover:text-white focus:outline-none focus-visible:ring focus-visible:ring-primary focus-visible:ring-opacity-75'>
+							<Disclosure.Button className='flex w-full justify-between rounded-lg px-4 py-2 text-left  text-secondary hover:bg-primary hover:text-white focus:outline-none focus-visible:ring focus-visible:ring-primary focus-visible:ring-opacity-75 text-2xl  font-semibold pb-5'>
 								<span>How does the Pera financing work?</span>
 								<CgChevronUp
 									className={`${
@@ -16,37 +16,13 @@ export default function Faq() {
 									} h-5 w-5 `}
 								/>
 							</Disclosure.Button>
-							<Disclosure.Panel className='px-4 pt-4 pb-2 text-sm text-gray-500'>
+							<Disclosure.Panel className='px-4 pt-4  w-full border-b border-black pb-12 text-lg'>
 								Fill up a short form and select from a
 								personalized inventory selection. Apply for a
 								loan and start receiving offers from various
 								Para approved financing partners. Confirm
 								acceptance of an offer and we will delivery your
 								property in 5-7 days
-							</Disclosure.Panel>
-						</>
-					)}
-				</Disclosure>
-				<Disclosure>
-					{({ open }) => (
-						<>
-							<Disclosure.Button className='flex w-full justify-between rounded-lg px-4 py-2 text-left text-lg text-secondary hover:bg-primary hover:text-white focus:outline-none focus-visible:ring focus-visible:ring-primary focus-visible:ring-opacity-75'>
-								<span>
-									What type of property can be bought through
-									Pera finance?
-								</span>
-								<CgChevronUp
-									className={`${
-										open ? 'rotate-180 transform  ' : ''
-									} h-5 w-5 `}
-								/>
-							</Disclosure.Button>
-							<Disclosure.Panel className='px-4 pt-4 pb-2 text-sm text-gray-500'>
-								We have an expansive selection of car available
-								for finance. Some of the makes available are –
-								Land, Flats, Buildings . If you don’t find the
-								property of your choice, please conact us and we
-								would source one meeting your needs
 							</Disclosure.Panel>
 						</>
 					)}
