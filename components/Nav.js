@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { CgProfile } from 'react-icons/cg';
@@ -8,9 +8,22 @@ const activeLink = `px-3 py-2 font-bold font-bold text-primary`;
 const nonActiveLink = `px-3 py-2 font-bold hover:text-primary`;
 function Nav() {
 	const router = useRouter();
+	const [clientIsLoggedIn, setClientIsLoggedIn] = useState(false);
+	useEffect(() => {
+		const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+		if (isLoggedIn) {
+			setClientIsLoggedIn(isLoggedIn);
+		}
+	}, []);
 
 	const [isOpen, setIsOpen] = useState(false);
 	const [showIcon, setShowIcon] = useState(false);
+
+	const logout = () => {
+		localStorage.removeItem('isLoggedIn');
+		router.reload();
+	};
 	return (
 		<>
 			<nav className='shadow-md sticky top-0 bg-white z-50'>
@@ -28,10 +41,10 @@ function Nav() {
 							</Link>
 							<div className='hidden md:block '>
 								<div className='ml-10 flex items-baseline space-x-4'>
-									<Link href='/loan'>
+									<Link href='/'>
 										<a
 											className={
-												router.pathname == '/loan'
+												router.pathname == '/'
 													? activeLink
 													: nonActiveLink
 											}>
@@ -49,73 +62,50 @@ function Nav() {
 											New Application
 										</a>
 									</Link>
-									{/* <Link href='/proforma-invoice'>
-										<a
-											className={
-												router.pathname ==
-												'/proforma-invoice'
-													? activeLink
-													: nonActiveLink
-											}>
-											Generate Invoice
-										</a>
-									</Link> 
-									<Link href='/dsa'>
-										<a
-											className={
-												router.pathname == '/dsa'
-													? activeLink
-													: nonActiveLink
-											}>
-											DSA
-										</a>
-									</Link>*/}
 								</div>
 							</div>
 						</div>
 						<div className='flex items-center justify-between'>
-							<Link href='/auth/login'>
-								<a
-									className={`${
-										router.pathname == '/login'
-											? activeLink
-											: nonActiveLink
-									} hidden sm:inline-block`}>
-									Login
-								</a>
-							</Link>
-							<Link href='/auth/signup'>
-								<a
-									className={`${
-										router.pathname == '/signup'
-											? activeLink
-											: nonActiveLink
-									} hidden sm:inline-block`}>
-									Sign Up
-								</a>
-							</Link>
-							<div className=' hidden sm:inline-block'>
-								<div
-									className='flex text-primary cursor-pointer hover:text-secondary '
-									onClick={() => setShowIcon(!showIcon)}>
-									<CgProfile className='text-2xl mx-2 text-primary cursor-pointer ' />{' '}
-									<span className='mr-5'>Settings</span>
-									{showIcon && (
-										<div className='shadow-lg absolute mt-10 border border-primary text-primary bg-white'>
-											<button
-												className='hover:bg-primary hover:text-white w-full  p-1 border-b border-primary '
-												onClick={() => {
-													router.push('/profile');
-												}}>
-												Profile
-											</button>
-											<button className='hover:bg-primary hover:text-white w-full  p-1'>
-												Logout
-											</button>
-										</div>
-									)}
-								</div>
-							</div>
+							{!clientIsLoggedIn && (
+								<>
+									{' '}
+									<Link href='/auth/login'>
+										<a
+											className={`${
+												router.pathname == '/login'
+													? activeLink
+													: nonActiveLink
+											} hidden sm:inline-block`}>
+											Login
+										</a>
+									</Link>
+									<Link href='/auth/signup'>
+										<a
+											className={`${
+												router.pathname == '/signup'
+													? activeLink
+													: nonActiveLink
+											} hidden sm:inline-block`}>
+											Sign Up
+										</a>
+									</Link>
+								</>
+							)}
+							{clientIsLoggedIn && (
+								<>
+									<button
+										className={`${
+											router.pathname == '/signup'
+												? activeLink
+												: nonActiveLink
+										} hidden sm:inline-block`}
+										onClick={() => {
+											logout();
+										}}>
+										Logout
+									</button>
+								</>
+							)}
 							<div className='-mr-2 flex md:hidden'>
 								<button
 									onClick={() =>
@@ -173,16 +163,16 @@ function Nav() {
 							<a
 								href='#'
 								className={
-									router.pathname == '/loan'
+									router.pathname == '/'
 										? activeLink
 										: nonActiveLink
 								}>
-								Loan
+								Home
 							</a>
 						</div>
 						<div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
 							<a
-								href='#'
+								href='/new-application'
 								className={
 									router.pathname == '/new-application'
 										? activeLink
@@ -191,53 +181,40 @@ function Nav() {
 								New Application
 							</a>
 						</div>
-						<div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
-							<a
-								href='#'
-								className={
-									router.pathname == '/dsa'
-										? activeLink
-										: nonActiveLink
-								}>
-								DSA
-							</a>
-						</div>
-						<div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
-							<a
-								href='#'
-								className={
-									router.pathname == '/profile'
-										? activeLink
-										: nonActiveLink
-								}>
-								Profile
-							</a>
-						</div>
-						<div className='mx-2'>
-							<button
-								className='hover:bg-primary hover:text-white bg-white px-4 py-2 my-1 hover:shadow-lg w-full'
-								onClick={() => {
-									router.push('/signup');
-								}}>
-								Sign Up
-							</button>
-						</div>
-						<div className=' mx-2'>
-							<button
-								className='hover:bg-primary hover:text-white bg-white px-4 py-2 my-1 hover:shadow-lg w-full'
-								onClick={() => {
-									router.push('/login');
-								}}>
-								Login
-							</button>
-						</div>
-						<div className=' mx-2'>
-							<button
-								className='hover:bg-primary hover:text-white bg-white px-4 py-2 my-1 hover:shadow-lg w-full'
-								onClick={() => {}}>
-								Logout
-							</button>
-						</div>
+
+						{!clientIsLoggedIn && (
+							<>
+								<div className='mx-2'>
+									<button
+										className='hover:bg-primary hover:text-white bg-white px-4 py-2 my-1 hover:shadow-lg w-full'
+										onClick={() => {
+											router.push('/auth/signup');
+										}}>
+										Sign Up
+									</button>
+								</div>
+								<div className=' mx-2'>
+									<button
+										className='hover:bg-primary hover:text-white bg-white px-4 py-2 my-1 hover:shadow-lg w-full'
+										onClick={() => {
+											router.push('/auth/login');
+										}}>
+										Login
+									</button>
+								</div>
+							</>
+						)}
+						{clientIsLoggedIn && (
+							<div className=' mx-2'>
+								<button
+									className='hover:bg-primary hover:text-white bg-white px-4 py-2 my-1 hover:shadow-lg w-full'
+									onClick={() => {
+										logout();
+									}}>
+									Logout
+								</button>
+							</div>
+						)}
 					</div>
 				)}
 			</nav>
