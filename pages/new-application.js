@@ -62,7 +62,7 @@ export default function NewApplication() {
 		};
 		try {
 			const response = await axios.post(
-				`${process.env.NEXT_PUBLIC_BACKEND_URL}/application`,
+				`https://develop-backend-pera.onrender.com/api/v1/application`,
 				payload
 			);
 			if (response.status === 201) {

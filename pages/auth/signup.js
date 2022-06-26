@@ -36,7 +36,7 @@ export default function Signup() {
 
 		try {
 			const response = await axios.post(
-				`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/signup`,
+				`https://develop-backend-pera.onrender.com/api/v1/auth/signup`,
 				payload
 			);
 

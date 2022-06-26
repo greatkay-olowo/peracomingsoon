@@ -30,7 +30,7 @@ export default function Login() {
 
 		try {
 			const response = await axios.post(
-				`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
+				`https://develop-backend-pera.onrender.com/api/v1/auth/login`,
 				payload
 			);
 
