@@ -5,6 +5,7 @@ import InputUI from '../../components/UI/Input';
 import AppContainer from '../../components/Container';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
 
 export default function Signup() {
 	useEffect(() => {
@@ -40,25 +41,17 @@ export default function Signup() {
 			);
 
 			if (response.status === 201) {
-				console.log(
-					'🚀 ~ file: signup.js ~ line 41 ~ signup ~ response',
-					response
-				);
-				localStorage.setItem(
-					'accessToken',
-					response.data.message.accessToken
-				);
-				localStorage.setItem(
-					'firstName',
-					response.data.message.firstName
-				);
-				localStorage.setItem(
-					'lastName',
-					response.data.message.lastName
-				);
-				localStorage.setItem('type', response.data.message.type);
-				localStorage.setItem('isLoggedIn', true);
-				localStorage.setItem('lastLogedIn', new Date().getMinutes());
+				Cookies.set('accessToken', response.data.message.accessToken, {
+					expires: 1,
+				});
+				Cookies.set('firstName', response.data.message.firstName, {
+					expires: 1,
+				});
+				Cookies.set('lastName', response.data.message.lastName, {
+					expires: 1,
+				});
+				Cookies.set('isLoggedIn', true, { expires: 1 });
+				Cookies.set('type', response.data.message.type, { expires: 1 });
 				router.push('/');
 			}
 		} catch (error) {

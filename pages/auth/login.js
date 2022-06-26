@@ -5,15 +5,16 @@ import InputUI from '../../components/UI/Input';
 import AppContainer from '../../components/Container';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
 
 export default function Login() {
 	useEffect(() => {
-		localStorage.removeItem('accessToken');
-		localStorage.removeItem('firstName');
-		localStorage.removeItem('lastName');
-		localStorage.removeItem('isLoggedIn');
-		localStorage.removeItem('lastLogedIn');
-		localStorage.removeItem('type');
+		Cookies.remove('accessToken');
+		Cookies.remove('firstName');
+		Cookies.remove('lastName');
+		Cookies.remove('isLoggedIn');
+		Cookies.remove('lastLogedIn');
+		Cookies.remove('type');
 	}, []);
 	const router = useRouter();
 
@@ -34,21 +35,17 @@ export default function Login() {
 			);
 
 			if (response.status === 201) {
-				localStorage.setItem(
-					'accessToken',
-					response.data.message.accessToken
-				);
-				localStorage.setItem(
-					'firstName',
-					response.data.message.firstName
-				);
-				localStorage.setItem(
-					'lastName',
-					response.data.message.lastName
-				);
-				localStorage.setItem('isLoggedIn', true);
-				localStorage.setItem('type', response.data.message.type);
-				localStorage.setItem('lastLogedIn', new Date().getMinutes());
+				Cookies.set('accessToken', response.data.message.accessToken, {
+					expires: 1,
+				});
+				Cookies.set('firstName', response.data.message.firstName, {
+					expires: 1,
+				});
+				Cookies.set('lastName', response.data.message.lastName, {
+					expires: 1,
+				});
+				Cookies.set('isLoggedIn', true, { expires: 1 });
+				Cookies.set('type', response.data.message.type, { expires: 1 });
 				router.push('/');
 			}
 		} catch (error) {

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { CgProfile } from 'react-icons/cg';
 import ButtonUI from './UI/Button';
+import Cookies from 'js-cookie';
 
 const activeLink = `px-3 py-2 font-bold font-bold text-primary`;
 const nonActiveLink = `px-3 py-2 font-bold hover:text-primary`;
@@ -10,7 +11,7 @@ function Nav() {
 	const router = useRouter();
 	const [clientIsLoggedIn, setClientIsLoggedIn] = useState(false);
 	useEffect(() => {
-		const isLoggedIn = localStorage.getItem('isLoggedIn');
+		const isLoggedIn = Cookies.get('isLoggedIn');
 
 		if (isLoggedIn) {
 			setClientIsLoggedIn(isLoggedIn);
@@ -21,7 +22,7 @@ function Nav() {
 	const [showIcon, setShowIcon] = useState(false);
 
 	const logout = () => {
-		localStorage.removeItem('isLoggedIn');
+		Cookies.remove('isLoggedIn');
 		router.reload();
 	};
 	return (
@@ -160,26 +161,28 @@ function Nav() {
 						className='md:hidden transition ease-in-out delay-150'
 						id='mobile-menu'>
 						<div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
-							<a
-								href='#'
-								className={
-									router.pathname == '/'
-										? activeLink
-										: nonActiveLink
-								}>
-								Home
-							</a>
+							<Link href='/'>
+								<a
+									className={
+										router.pathname == '/'
+											? activeLink
+											: nonActiveLink
+									}>
+									Home
+								</a>
+							</Link>
 						</div>
 						<div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
-							<a
-								href='/new-application'
-								className={
-									router.pathname == '/new-application'
-										? activeLink
-										: nonActiveLink
-								}>
-								New Application
-							</a>
+							<Link href='/new-application'>
+								<a
+									className={
+										router.pathname == '/new-application'
+											? activeLink
+											: nonActiveLink
+									}>
+									New Application
+								</a>
+							</Link>
 						</div>
 
 						{!clientIsLoggedIn && (
