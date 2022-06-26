@@ -22,7 +22,12 @@ function Nav() {
 	const [showIcon, setShowIcon] = useState(false);
 
 	const logout = () => {
+		Cookies.remove('accessToken');
+		Cookies.remove('firstName');
+		Cookies.remove('lastName');
 		Cookies.remove('isLoggedIn');
+		Cookies.remove('lastLogedIn');
+		Cookies.remove('type');
 		router.reload();
 	};
 	return (

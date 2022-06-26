@@ -6,7 +6,8 @@ import InputUI from '../components/UI/Input';
 import ButtonUI from '../components/UI/Button';
 import HeroPic from '../public/hero.jpg';
 import { CgCheck } from 'react-icons/cg';
-
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import {
 	loanAmount,
 	equity as _equity,
@@ -19,11 +20,11 @@ import Footer from '../components/Footer';
 const CTA = () => {
 	return (
 		<div className='mt-8 text-center'>
-			<button
-				className='bg-primary sm:text-lg py-5 font-medium text-center text-white my-10 rounded-lg w-60 hover:shadow-lg uppercase hover:drop-shadow-xl'
-				onClick={() => {}}>
-				Apply Now
-			</button>
+			<Link href='/new-application'>
+				<a className='bg-primary sm:text-lg py-5 px-10 font-medium text-center text-white my-10 rounded-lg w-60 hover:shadow-lg uppercase hover:drop-shadow-xl'>
+					Apply Now
+				</a>
+			</Link>
 		</div>
 	);
 };
@@ -40,10 +41,14 @@ const Subheading = ({ children }) => {
 };
 
 export default function Home() {
+	const router = useRouter();
 	const [amount, setAmount] = useState();
 	const [tenure, setTenure] = useState();
 	const [equity, setEquity] = useState();
-
+	const navi = (e) => {
+		e.preventDefault();
+		router.push('/new-application');
+	};
 	return (
 		<>
 			<Nav />
@@ -115,7 +120,11 @@ export default function Home() {
 							<div className='text-4xl sm:text-4xl font-semibold sm:font-bold'>
 								What you need, <br /> when you need it
 							</div>
-							<button className='bg-primary sm:text-lg py-5 font-medium text-center text-white my-10 rounded-lg w-60 hover:shadow-lg uppercase hover:drop-shadow-xl'>
+							<button
+								className='bg-primary sm:text-lg py-5 font-medium text-center text-white my-10 rounded-lg w-60 hover:shadow-lg uppercase hover:drop-shadow-xl'
+								onClick={(e) => {
+									navi(e);
+								}}>
 								Get Prequalified
 							</button>
 						</div>

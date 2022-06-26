@@ -9,12 +9,12 @@ import Cookies from 'js-cookie';
 
 export default function Signup() {
 	useEffect(() => {
-		localStorage.removeItem('accessToken');
-		localStorage.removeItem('firstName');
-		localStorage.removeItem('lastName');
-		localStorage.removeItem('isLoggedIn');
-		localStorage.removeItem('lastLogedIn');
-		localStorage.removeItem('type');
+		Cookies.remove('accessToken');
+		Cookies.remove('firstName');
+		Cookies.remove('lastName');
+		Cookies.remove('isLoggedIn');
+		Cookies.remove('lastLogedIn');
+		Cookies.remove('type');
 	}, []);
 	const router = useRouter();
 

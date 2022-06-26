@@ -37,6 +37,7 @@ export default function NewApplication() {
 
 	const submit = async (e) => {
 		e.preventDefault();
+
 		const payload = {
 			application: {
 				firstname: firstname,
