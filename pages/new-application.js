@@ -10,6 +10,7 @@ import NaijaStates from 'naija-state-local-government';
 import FileInput from '../components/UI/FineInput';
 import AuthContainer from '../components/authContainer';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 export default function NewApplication() {
 	const router = useRouter();
@@ -63,7 +64,12 @@ export default function NewApplication() {
 		try {
 			const response = await axios.post(
 				`https://develop-backend-pera.onrender.com/api/v1/application`,
-				payload
+				payload,
+				{
+					headers: {
+						authorization: 'bearer ' + Cookies.get('accessToken'),
+					},
+				}
 			);
 			if (response.status === 201) {
 				router.push('/');
