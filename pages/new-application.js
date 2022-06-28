@@ -34,9 +34,11 @@ export default function NewApplication() {
 	const [employer, setEmployer] = useState();
 	const [salary, setSalary] = useState();
 	const [employmentMonth, setEmploymentMonth] = useState();
+	const [isLoading, setIsLoading] = useState(false);
 
 	const submit = async (e) => {
 		e.preventDefault();
+		setIsLoading(true);
 
 		const payload = {
 			application: {
@@ -74,9 +76,12 @@ export default function NewApplication() {
 			);
 			if (response.status === 201) {
 				router.push('/');
+				setIsLoading(false);
 			}
+			setIsLoading(false);
 		} catch (error) {
 			alert(error.response.data.message.error);
+			setIsLoading(false);
 		}
 	};
 	return (
@@ -380,6 +385,7 @@ export default function NewApplication() {
 								<div className='w-full'>
 									<ButtonUI
 										text='Submit'
+										loading={isLoading}
 										onClick={(e) => submit(e)}
 									/>
 								</div>
