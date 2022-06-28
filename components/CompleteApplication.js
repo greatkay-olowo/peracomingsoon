@@ -19,7 +19,7 @@ const CompleteApplication = () => {
 				onClick={() => {
 					setShowModal(!showModal);
 				}}
-				className=' transition flex my-auto w-full shadow rounded p-2 bg-primary h-20 justify-around cursor-pointer text-white hover:bg-accent hover:text-primary mb-3 hover:shadow-none'>
+				className=' transition flex my-auto w-full shadow rounded p-2 bg-primary h-20 justify-around cursor-pointer text-white hover:bg-white hover:text-primary mb-3 hover:shadow-none'>
 				<div className='flex my-auto '>
 					<CgAdd className='text-2xl' />
 					<span className='font-medium ml-3'>New Application</span>
@@ -31,7 +31,7 @@ const CompleteApplication = () => {
 					<div className='flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-white'>
 						<div className='container relative mx-auto max-w-[640px] px-2 sm:px-0 '>
 							<div className=' border border-primary rounded-lg shadow-lg relative flex flex-col w-full  outline-none focus:outline-none mt-10'>
-								<div className='flex items-start justify-between p-5 border-b border-solid border-primary bg-accent rounded-t '>
+								<div className='flex items-start justify-between p-5 border-b border-solid border-primary bg-white rounded-t '>
 									<h3 className='text-center font-bold '>
 										Complete Application For
 									</h3>
@@ -125,7 +125,7 @@ const CompleteApplication = () => {
 
 											<div className='flex mt-5 justify-end'>
 												<button
-													className='flex justify-between bg-primary text-white px-4 py-2 rounded  hover:bg-accent hover:text-primary hover:font-bold '
+													className='flex justify-between bg-primary text-white px-4 py-2 rounded  hover:bg-white hover:text-primary hover:font-bold '
 													onClick={() =>
 														setLevels(2)
 													}>
@@ -161,7 +161,7 @@ const CompleteApplication = () => {
 											</div>
 											<div className='flex mt-5 justify-between'>
 												<button
-													className='flex justify-between text-primary px-4 py-2 rounded  hover:bg-accent hover:text-primary font-bold '
+													className='flex justify-between text-primary px-4 py-2 rounded  hover:bg-white hover:text-primary font-bold '
 													onClick={() =>
 														setLevels(1)
 													}>
@@ -171,7 +171,7 @@ const CompleteApplication = () => {
 													<span>Back </span>
 												</button>
 												<button
-													className='flex justify-between bg-primary text-white px-4 py-2 rounded  hover:bg-accent hover:text-primary hover:font-bold '
+													className='flex justify-between bg-primary text-white px-4 py-2 rounded  hover:bg-white hover:text-primary hover:font-bold '
 													onClick={() =>
 														setLevels(2)
 													}>

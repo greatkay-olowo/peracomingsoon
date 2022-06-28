@@ -82,7 +82,7 @@ export default function Login() {
 						</div>
 						<div className='flex items-baseline justify-between'>
 							<button
-								className='px-6 py-2 mt-4 text-white bg-primary rounded-lg hover:bg-accent hover:text-primary'
+								className='px-6 py-2 mt-4 text-white bg-primary rounded-lg hover:bg-white hover:text-primary'
 								onClick={(e) => login(e)}>
 								{!isLoading ? (
 									'Login'
