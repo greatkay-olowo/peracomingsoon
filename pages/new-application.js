@@ -11,8 +11,12 @@ import FileInput from '../components/UI/FineInput';
 import AuthContainer from '../components/authContainer';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function NewApplication() {
+	const notifySuccess = (text) => toast.success(text);
+	const notifyError = (text) => toast.error(text);
+	const notifyLoading = () => toast.loading('Loading');
 	const router = useRouter();
 	const [firstname, setFirstName] = useState();
 	const [surname, setSurname] = useState();
@@ -34,11 +38,32 @@ export default function NewApplication() {
 	const [employer, setEmployer] = useState();
 	const [salary, setSalary] = useState();
 	const [employmentMonth, setEmploymentMonth] = useState();
-	const [isLoading, setIsLoading] = useState(false);
 
 	const submit = async (e) => {
 		e.preventDefault();
-		setIsLoading(true);
+		toast.dismiss();
+		if (
+			firstname === undefined ||
+			email === undefined ||
+			surname === undefined ||
+			dob === undefined ||
+			phone === undefined ||
+			bvn === undefined ||
+			residentialState === undefined ||
+			residentialLga === undefined ||
+			loanAmount === undefined ||
+			tenure === undefined ||
+			loanPurpose === undefined ||
+			propertyState === undefined ||
+			propertyLga === undefined ||
+			propertyValue === undefined ||
+			employmentMonth === undefined
+		) {
+			notifyError('Please enter all fields.');
+			return;
+		}
+
+		notifyLoading();
 
 		const payload = {
 			application: {
@@ -64,6 +89,7 @@ export default function NewApplication() {
 				employmentMonth: employmentMonth,
 			},
 		};
+
 		try {
 			const response = await axios.post(
 				`https://develop-backend-pera.onrender.com/api/v1/application`,
@@ -75,17 +101,20 @@ export default function NewApplication() {
 				}
 			);
 			if (response.status === 201) {
+				toast.dismiss();
+				notifySuccess('Success');
 				router.push('/');
-				setIsLoading(false);
 			}
-			setIsLoading(false);
+			toast.dismiss();
 		} catch (error) {
-			alert(error.response.data.message.error);
-			setIsLoading(false);
+			// alert(error.response.data.message.error);
+			toast.dismiss();
+			notifyError(error.response.data.message.error);
 		}
 	};
 	return (
 		<AuthContainer>
+			<Toaster />
 			<AppContainer>
 				<div className='rounded m-auto my-2 max-w-3xl	'>
 					<div className='mt-4'>
@@ -385,7 +414,6 @@ export default function NewApplication() {
 								<div className='w-full'>
 									<ButtonUI
 										text='Submit'
-										loading={isLoading}
 										onClick={(e) => submit(e)}
 									/>
 								</div>

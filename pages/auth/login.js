@@ -38,7 +38,6 @@ export default function Login() {
 	const login = async (e) => {
 		e.preventDefault();
 		toast.dismiss();
-
 		notifyLoading();
 		const payload = {
 			email,

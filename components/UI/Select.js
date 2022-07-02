@@ -19,15 +19,13 @@ export default function Select({
 				onChange={onChange}
 				className='w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-primary'>
 				<option key={''}></option>
-				{options.map((option) => (
-					<option key={option} value={option}>
-						{option}
+
+				{options.map((item) => (
+					<option key={`${item}`} value={item}>
+						{item}
 					</option>
 				))}
 			</select>
-			{error && (
-				<div className='text-red text-xs font-medium mt-2'>{error}</div>
-			)}
 		</div>
 	);
 }
