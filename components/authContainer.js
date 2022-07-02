@@ -7,9 +7,7 @@ const AuthContainer = ({ children }) => {
 	const router = useRouter();
 	useEffect(() => {
 		const isLoggedIn = Cookies.get('isLoggedIn');
-		const lastLogedIn = Cookies.get('lastLogedIn');
-		if (!isLoggedIn || new Date().getMinutes() - lastLogedIn > 30)
-			router.push('/auth/login');
+		if (isLoggedIn !== 'True') router.push('/auth/login');
 		return;
 	}, []);
 	return children;
